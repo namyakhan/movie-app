@@ -1,26 +1,21 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap");
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
-  box-sizing: border-box;
+  font-family: "Sora";
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+@layer base {
+  h2 {
+    @apply text-[25px] text-white font-[600];
   }
-  body {
-    color: white;
-    background: black;
+  h5 {
+    @apply text-[18px] text-gray-500;
+  }
+  h6 {
+    @apply text-[11px] text-gray-500 mt-12;
   }
 }
