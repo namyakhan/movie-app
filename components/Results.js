@@ -1,7 +1,7 @@
-const Thumbnail = ({ result }) => {
+const ThumbnailPopular = ({ result }) => {
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
   return (
-    <div className="p-2 cursor-pointer w-[200px] h-[120px]">
+    <div className="cursor-pointer w-[500px] h-[250px] relative">
       <img
         layout="responsive"
         loading="lazy"
@@ -9,22 +9,57 @@ const Thumbnail = ({ result }) => {
           `${BASE_URL}${result.backdrop_path || result.poster_path}` ||
           `${BASE_URL}${result.poster_path}`
         }
-        className="rounded-xl h-[100px] w-[500px]"
+        className="rounded-xl h-[250px] w-[500px] "
+      />
+      <div className="flex flex-row items-center">
+        <h1>{result.original_title}</h1>
+        <h4>{result.vote_average} ⭐️</h4>
+      </div>
+    </div>
+  );
+};
+
+const ThumbnailResults = ({ result }) => {
+  const BASE_URL = "https://image.tmdb.org/t/p/original/";
+  return (
+    <div className="cursor-pointer w-[220px] h-[120px]">
+      <img
+        layout="responsive"
+        loading="lazy"
+        src={
+          `${BASE_URL}${result.backdrop_path || result.poster_path}` ||
+          `${BASE_URL}${result.poster_path}`
+        }
+        className="rounded-xl h-[120px] w-[200px]"
       />
     </div>
   );
 };
 
-const Results = ({ results }) => {
+const Results = ({ results, popular, top }) => {
   return (
     <div className="container mx-auto w-2/3">
-      {" "}
-      <div className="bg-darkblue h-screen w-full ">
-        <h2>Discover</h2>
+      <div className="bg-darkblue h-screen w-full py-10 px-5">
+        <h2>Discovers</h2>
+        <div className="px-5 my-10 grid grid-flow-col  gap-5 overflow-x-auto scrollbar-hide mb-16">
+          {popular.map((result) => (
+            <ThumbnailPopular key={result.id} result={result} />
+          ))}
+        </div>
 
-        <div className="px-5 my-10 grid grid-flow-col  gap-4 overflow-x-auto scrollbar-hide">
+        <h2>Popular Films</h2>
+        <div className="px-5 my-10 grid grid-flow-col gap-0 overflow-x-auto scrollbar-hide">
+          {top.map((result) => (
+            <ThumbnailResults key={result.id} result={result} />
+          ))}
+        </div>
+
+        <h2>Searches</h2>
+        <div className="px-5 my-10 grid grid-flow-col  gap-0 overflow-x-auto scrollbar-hide">
           {results.map((result) => (
-            <Thumbnail key={result.id} result={result} />
+            <div key={result.id}>
+              <ThumbnailResults result={result} />
+            </div>
           ))}
         </div>
       </div>
