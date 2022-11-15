@@ -21,9 +21,9 @@ const SideNavItems = ({ Icon, title }) => {
 
 const SideNav = () => {
   return (
-    <div className="bg-navy w-[300px] h-screen">
-      <div className="container mx-auto p-10">
-        <h2>
+    <div className="bg-navy w-[200px] h-screen">
+      <div className="container mx-auto p-6 p">
+        <h2 className="mt-4">
           <span className="text-blue">Mov.</span>time
         </h2>
         <h6>MENU</h6>
