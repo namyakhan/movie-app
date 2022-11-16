@@ -1,7 +1,7 @@
 const ThumbnailPopular = ({ result }) => {
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
   return (
-    <div className="cursor-pointer w-[500px] h-[250px] relative">
+    <div className="cursor-pointer w-[500px] h-[300px] relative">
       <img
         layout="responsive"
         loading="lazy"
@@ -9,7 +9,7 @@ const ThumbnailPopular = ({ result }) => {
           `${BASE_URL}${result.backdrop_path || result.poster_path}` ||
           `${BASE_URL}${result.poster_path}`
         }
-        className="rounded-xl h-[250px] w-[500px] "
+        className="rounded-xl h-[300px] w-[500px] "
       />
       <div className="flex flex-row items-center">
         <h1>{result.original_title}</h1>
@@ -22,7 +22,7 @@ const ThumbnailPopular = ({ result }) => {
 const ThumbnailResults = ({ result }) => {
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
   return (
-    <div className="cursor-pointer w-[220px] h-[120px]">
+    <div className="cursor-pointer w-[270px] h-[150px]">
       <img
         layout="responsive"
         loading="lazy"
@@ -30,7 +30,7 @@ const ThumbnailResults = ({ result }) => {
           `${BASE_URL}${result.backdrop_path || result.poster_path}` ||
           `${BASE_URL}${result.poster_path}`
         }
-        className="rounded-xl h-[120px] w-[200px]"
+        className="rounded-xl h-[150px] w-[250px]"
       />
     </div>
   );
@@ -39,7 +39,7 @@ const ThumbnailResults = ({ result }) => {
 const Results = ({ results, popular, top }) => {
   return (
     <div className="container mx-auto w-2/3">
-      <div className="bg-darkblue h-screen w-full py-10 px-5">
+      <div className="bg-darkblue h-screen w-full py-16 px-5">
         <h2>Discovers</h2>
         <div className="px-5 my-10 grid grid-flow-col  gap-5 overflow-x-auto scrollbar-hide mb-16">
           {popular.map((result) => (
@@ -47,7 +47,7 @@ const Results = ({ results, popular, top }) => {
           ))}
         </div>
 
-        <h2>Popular Films</h2>
+        <h2>Popular Movies of All Times</h2>
         <div className="px-5 my-10 grid grid-flow-col gap-0 overflow-x-auto scrollbar-hide">
           {top.map((result) => (
             <ThumbnailResults key={result.id} result={result} />

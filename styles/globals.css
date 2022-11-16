@@ -22,7 +22,7 @@
     @apply text-[18px] text-gray-500;
   }
   h6 {
-    @apply text-[11px] text-gray-500 mt-12;
+    @apply text-[11px] text-gray-500 mt-20;
   }
   p {
     @apply text-[14px] text-white;

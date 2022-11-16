@@ -12,18 +12,18 @@ import Link from "next/link";
 
 const SideNavItems = ({ Icon, title }) => {
   return (
-    <div className="flex flex-row items-center mt-5 cursor-pointer p-2">
-      <Icon className="h-6 text-gray-500 mr-3" />
-      <h5>{title}</h5>
+    <div className="flex flex-row items-center mt-5 cursor-pointer p-2 ">
+      <Icon className="h-6 text-gray-500 mr-3 hover:text-white" />
+      <h5 className="hover:text-white">{title}</h5>
     </div>
   );
 };
 
 const SideNav = () => {
   return (
-    <div className="bg-navy w-[200px] h-screen">
-      <div className="container mx-auto p-6 p">
-        <h2 className="mt-4">
+    <div className="hidden lg:block bg-navy w-[200px] h-screen">
+      <div className="container mx-auto p-6 ">
+        <h2 className="mt-10">
           <span className="text-blue">Mov.</span>time
         </h2>
         <h6>MENU</h6>
