@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  images: ["image.tmbd.org"],
+  domains: ["image.tmbd.org"],
 };
 
 module.exports = nextConfig;
