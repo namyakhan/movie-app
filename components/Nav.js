@@ -41,7 +41,6 @@ const Nav = () => {
         <div className={`grid grid-cols-2 gap-5 mt-5`}>
           {Object.entries(requests)
             .filter((val) => {
-              console.log(val[1].title);
               if (search === "") {
                 return val;
               } else if (
