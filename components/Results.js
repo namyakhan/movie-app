@@ -47,7 +47,7 @@ const Results = ({ results, popular, top }) => {
           ))}
         </div>
 
-        <h2>Popular Movies of All Times</h2>
+        <h2>Popular Movies</h2>
         <div className="px-5 my-10 grid grid-flow-col gap-0 overflow-x-auto scrollbar-hide">
           {top.map((result) => (
             <ThumbnailResults key={result.id} result={result} />
